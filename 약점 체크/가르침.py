@@ -1,4 +1,5 @@
-import sys
+import sys, itertools
+
 input = sys.stdin.readline
 
 n, k = map(int, input().split())
@@ -19,7 +20,7 @@ learn = [0] * 26
 for c in ('a', 'c', 'i', 'n', 't'):
     learn[ord(c) - ord('a')] = 1
 
-
+# a~z까지 중에서 k-5개씩 배울때의 모든 경우의 수
 def dfs(idx, cnt):
     global answer
 
